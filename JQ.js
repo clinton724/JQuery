@@ -1,27 +1,29 @@
-const btn = document.querySelector('#btn');
+// Using normal javascript
+// const btn = document.querySelector('#btn');
+// const onClick = function () {
+//     const img = document.querySelector('#img1');
+//     img.style.width = '500px';
+// }
+// btn.addEventListener('click', onClick);
 
-function onClick () {
-    /* Accessing an element by tag name */
-    // $('elementTagName').action()
-    // document.getElementByTagName('elementTagName')
-    // $('div').css('background-color', 'orange');
-    
-    /* Accessing an element by id */
-    // $('#elementId').action()
-    // document.getElementById('#elementId')
-    // $('#p1').css('font-style', 'italic');
+// Using jQuery
+$('document').ready(function () {
+    // Click events
+    // const onClick = function () {
+    //     $('#img1').css('width', '500px');
+    // }
+    // $('#btn').dblclick(onClick);
 
-    /* Accessing an element by classname */
-    //$('.elementClassName').action()
-    // document.getElementByClassName('.elementClassName')
-    // $('.para').css('font-style', 'italic');
+    // Mouse events
+    const onMouseEnter = function () {
+        $('#img1').css('width', '500px');
+    };
+    // $('#img1').mouseenter(onMouseEnter);
 
-    // $('#div1,#div2').css('background-color', 'green');
-    // jquery provides the ease to work on multiple attributes at the same time as shown
-    // $('#div1, li').css('background-color', 'purple');
-    // $('div  p').fadeToggle();
-    // $('p:first').fadeToggle();
-    $('li:even').fadeToggle();
-}
+    const onMouseLeave = function () {
+        $('#img1').css('width', '250px');
+    };
+    // $('#img1').mouseleave(onMouseLeave);
 
-btn.addEventListener('click', onClick);
+    $('#img1').hover(onMouseEnter, onMouseLeave);
+})
