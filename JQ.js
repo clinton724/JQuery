@@ -1,29 +1,36 @@
-// Using normal javascript
-// const btn = document.querySelector('#btn');
-// const onClick = function () {
-//     const img = document.querySelector('#img1');
-//     img.style.width = '500px';
-// }
-// btn.addEventListener('click', onClick);
+function handler () {
+    const hide = function () {
+        $('#img1').hide()
+    }
+    
+    const show = function () {
+        $('#img1').show();
+    }
 
-// Using jQuery
-$('document').ready(function () {
-    // Click events
-    // const onClick = function () {
-    //     $('#img1').css('width', '500px');
-    // }
-    // $('#btn').dblclick(onClick);
+    const toggle = function () {
+        $('#img1').toggle();
+    }
 
-    // Mouse events
-    const onMouseEnter = function () {
-        $('#img1').css('width', '500px');
-    };
-    // $('#img1').mouseenter(onMouseEnter);
+    const fadeIn = function () {
+        $('#img1').fadeIn(2000);
+    }
 
-    const onMouseLeave = function () {
-        $('#img1').css('width', '250px');
-    };
-    // $('#img1').mouseleave(onMouseLeave);
+    const fadeOut = function () {
+        $('#img1').fadeOut(2000);
+    }
 
-    $('#img1').hover(onMouseEnter, onMouseLeave);
-})
+    const fadeToggle = function () {
+        $('#img1').fadeToggle(2000);
+    }
+    
+    $('#btn1').click(hide);
+    $('#btn2').click(show);
+    $('#btn3').click(toggle);
+    $('#btn4').click(fadeIn);
+    $('#btn5').click(fadeOut);
+    $('#btn6').click(fadeToggle);
+
+
+}
+
+$('document').ready(handler);
